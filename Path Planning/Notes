@@ -1,0 +1,3 @@
+A star Algorithm is not perfectly optimized (one extra useless loop that needs to be removed)
+
+Test grid runs pretty fast for small grids but really slow when it gets much larger
