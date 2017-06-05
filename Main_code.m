@@ -12,20 +12,19 @@ if (clientID>-1)
       
       % Robot construction
       a = init_robot(0,0);
+      b = init_robot(10,10);
       
       % Handles
-      [~,a.left_motor]=vrep.simxGetObjectHandle(clientID,'Pioneer_p3dx_rightMotor',vrep.simx_opmode_blocking );
-      [~,a.right_motor]=vrep.simxGetObjectHandle(clientID,'Pioneer_p3dx_leftMotor',vrep.simx_opmode_blocking );
+      a.ID = 'Pioneer_p3dx';
+      
+      b.ID = 'Pioneer_p3dx#0';
       
       % enable the synchronous mode on the client:
       vrep.simxSynchronousTrigger(clientID);
       
       % core system      
-      for i = 1:10
-          turn_right(a);
-          turn_left(a);
-          pause(0.1);
-      end
+      d1 = sense(a);
+      d2 = sense(b);
       % end simulation
        vrep.simxFinish(-1); 
 
