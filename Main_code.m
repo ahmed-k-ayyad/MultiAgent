@@ -11,13 +11,8 @@ if (clientID>-1)
       disp('Connected')
       
       % Robot construction
-      a = init_robot(0,0);
-      b = init_robot(10,10);
-      
-      % Handles
-      a.ID = 'Pioneer_p3dx';
-      
-      b.ID = 'Pioneer_p3dx#0';
+      a = init_robot('Pioneer_p3dx');
+      b = init_robot('Pioneer_p3dx#0');
       
       % enable the synchronous mode on the client:
       vrep.simxSynchronousTrigger(clientID);
